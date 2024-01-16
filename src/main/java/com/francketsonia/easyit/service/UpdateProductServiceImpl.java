@@ -1,27 +1,15 @@
-package com.francketsonia.easyit.repository;
+package com.francketsonia.easyit.service;
 
 import com.francketsonia.easyit.model.Product;
-import com.francketsonia.easyit.service.ProductService;
+import com.francketsonia.easyit.repository.ProductRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 @AllArgsConstructor
-public class ProductServiceImpl implements ProductService {
+public class UpdateProductServiceImpl implements UpdateProductService {
 
     private final ProductRepository productRepository;
-
-    @Override
-    public Product create(Product product) {
-        return productRepository.save(product);
-    }
-
-    @Override
-    public List<Product> read() {
-        return productRepository.findAll();
-    }
 
     @Override
     public Product update(Long id, Product product) {
@@ -35,11 +23,4 @@ public class ProductServiceImpl implements ProductService {
 
                 }).orElseThrow(() -> new RuntimeException("Produit non trouvé"));
     }
-
-    @Override
-    public String delete(Long id) {
-        productRepository.deleteById(id);
-        return "Produit supprimé avec succès";
-    }
-
 }
