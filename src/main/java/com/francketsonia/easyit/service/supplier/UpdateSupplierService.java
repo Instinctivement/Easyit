@@ -1,4 +1,8 @@
 package com.francketsonia.easyit.service.supplier;
 
-public class UpdateSupplierService {
+import com.francketsonia.easyit.model.Supplier;
+
+public interface UpdateSupplierService {
+
+    Supplier updateSupplier(Long supplierId, Supplier updatedSupplier);
 }
