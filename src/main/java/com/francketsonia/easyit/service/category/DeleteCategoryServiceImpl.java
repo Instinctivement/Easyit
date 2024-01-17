@@ -6,7 +6,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class DeleteCategoryServiceImpl {
+public class DeleteCategoryServiceImpl implements DeleteCategoryService {
 
     private final CategoryRepository categoryRepository;
+
+    @Override
+    public String deleteCategory(Long categoryId) {
+        categoryRepository.deleteById(categoryId);
+        return "Category supprimé avec succès";
+    }
+
 }
