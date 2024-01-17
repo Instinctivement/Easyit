@@ -1,4 +1,4 @@
-package com.francketsonia.easyit.service;
+package com.francketsonia.easyit.service.product;
 
 public interface DeleteProductService {
 

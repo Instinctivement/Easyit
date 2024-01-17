@@ -1,9 +1,8 @@
-package com.francketsonia.easyit.service;
+package com.francketsonia.easyit.service.product;
 
 import com.francketsonia.easyit.model.Product;
 import com.francketsonia.easyit.repository.ProductRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,6 +15,5 @@ public class CreateProductServiceImpl implements CreateProductService {
     public Product create(Product product) {
         return productRepository.save(product);
     }
-
 
 }

@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "product")
+@Table(name = "products")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -14,11 +14,22 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(length = 50)
-    private String name;
+    private Long productID;
+
+    @Column(length = 100)
+    private String product_name;
+
     @Column(length = 150)
     private String description;
-    private Integer price;
+
+    private Double price;
+
+    @ManyToOne
+    @JoinColumn(name = "categoryID")
+    private Category category;
+
+    @ManyToOne
+    @JoinColumn(name = "supplierID")
+    private Supplier supplier;
 
 }
