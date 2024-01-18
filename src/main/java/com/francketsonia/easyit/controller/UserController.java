@@ -16,6 +16,7 @@ import java.util.List;
 @Tag(name = "user")
 public class UserController {
 
+    //private final UserService userService;
     private final CreateUserService createUserService;
     private final ReadUserService readUserService;
     private final GetUserByIdService getUserByIdService;
